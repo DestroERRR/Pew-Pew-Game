@@ -3,9 +3,12 @@
  color myColor;
   
   GameObject(color c) {
+   // x = random(0, width);
+   // y = random(0,height);
     x = random(0+size/2,width-size/2);
     y = random(0+size/2,height-size/2);
     vx = vy = 0;
+    size = random(20,100);
     hp = 3; 
     myColor = c;
   }
@@ -37,9 +40,23 @@
     
   }
   
+  boolean touching(GameObject obj) {
+     if (dist(obj.x, obj.y, x, y) < obj.size/2 + size/2) {
+       return true;
+     } else return false;
+  }
   
-  
-  
+  boolean touchingObstacle() {
+    int i = 0;
+    while(i < objects.size()) {
+      GameObject obj = objects.get(i);
+      if (obj instanceof Obstacle && touching(obj)) {
+       return true; 
+      }
+      i++;
+    }
+    return false;
+  }
   
   
   

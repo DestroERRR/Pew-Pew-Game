@@ -27,7 +27,7 @@ class Player extends GameObject { //takes the information from GameObject so no 
       //Shooting
       void shoot(){
        if (mousePressed){
-        objects.add(new Bullet()); 
+        objects.add(new Bullet(x,y,5,1,yellow)); 
        }
         
       }

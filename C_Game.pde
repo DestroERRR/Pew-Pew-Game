@@ -14,6 +14,10 @@ void game() {
    
   }
   
+  if (frameCount % 60 == 0)  {//moldulus, it returns remainder
+  objects.add(new Enemy());
+  }
+  
   
 
 }
